@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "812662420319",
+    "project_id": "local-gpt-v8",
+    "storage_bucket": "local-gpt-v8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:812662420319:android:37ee394caf695597527cea",
+        "android_client_info": {
+          "package_name": "com.example.local_v8"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "812662420319-u9lf6qsetf8dmih4ua18lo3kl4rul0ga.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW2g6NVhhaQgmfqH8KmqsZ_NgsK2SqtxA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "812662420319-u9lf6qsetf8dmih4ua18lo3kl4rul0ga.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

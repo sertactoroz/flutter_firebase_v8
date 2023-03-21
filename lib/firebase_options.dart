@@ -63,7 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '812662420319',
     projectId: 'local-gpt-v8',
     storageBucket: 'local-gpt-v8.appspot.com',
-    iosClientId: '812662420319-9pn3lsq1s27rk2qrvrhm7fkqdt5duuf4.apps.googleusercontent.com',
+    iosClientId:
+        '812662420319-9pn3lsq1s27rk2qrvrhm7fkqdt5duuf4.apps.googleusercontent.com',
     iosBundleId: 'com.example.localV8',
   );
 }

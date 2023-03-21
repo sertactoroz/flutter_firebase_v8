@@ -1,6 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'register.dart';
+import 'package:local_v8/providers/user_provider.dart';
+import 'package:local_v8/view/home.dart';
+import 'package:provider/provider.dart';
+import 'package:local_v8/view/register.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -17,10 +20,18 @@ class _LoginPageState extends State<LoginPage> {
     super.initState();
     usernameController = TextEditingController(text: "msertactoroz@gmail.com");
     passwordController = TextEditingController(text: "12345678");
+    Navigator.popUntil(context, (route) => true);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    UserProvider userProvider = Provider.of<UserProvider>(context);
     return Scaffold(
         body: Padding(
       padding: const EdgeInsets.all(22.0),
@@ -48,6 +59,14 @@ class _LoginPageState extends State<LoginPage> {
                           await auth.signInWithEmailAndPassword(
                               email: usernameController.text,
                               password: passwordController.text);
+                      await userProvider.setUsersList();
+
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => HomePage(
+                                    auth: auth,
+                                  )));
                       print(credential);
                     } catch (e) {
                       print(e.toString());

@@ -1,12 +1,21 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:local_v8/providers/user_provider.dart';
+import 'package:provider/provider.dart';
 
-import 'login.dart';
+import 'view/login.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   FirebaseApp defaultApp = await Firebase.initializeApp();
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => UserProvider()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
